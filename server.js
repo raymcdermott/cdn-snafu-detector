@@ -32,13 +32,13 @@ app.use(errorHandler);
 app.get('/', function(req, res){
     // eventually add a form for a URL that we will inspect for CDN SNAFUs
 
-    var snafus = getSnafus('http://www.toyota-europe.com');
+    getSnafus('http://www.toyota-europe.com', function(urls) {
 
-    console.log('snafus ' + snafus.firstUrl);
+        res.send(urls);
 
-    res.send(snafus.firstUrl);
+        // post to ES / REDIS / MongoDB
+    });
 
-    // We will then generate a report on the SNAFUs
 });
 
 app.listen(3000);
