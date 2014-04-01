@@ -1,0 +1,10 @@
+{
+    "name": "cdn-snafu-detector",
+    "description": "Checks for failures to use a CDN on a web-site",
+    "version": "0.0.1",
+    "dependencies": {
+        "express": "3.x",
+        "request": "2.33.x",
+        "cheerio": "0.13.x"
+    }
+}
