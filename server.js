@@ -32,12 +32,15 @@ app.use(errorHandler);
 app.get('/', function(req, res){
     // eventually add a form for a URL that we will inspect for CDN SNAFUs
 
-    getSnafus('http://www.toyota-europe.com', function(urls) {
+    var interestingUrlRegex = /^http[s]:\/\/s3.*/;
 
-        res.send(urls);
+    getSnafus('http://t1-acceptance-glen-client.herokuapp.com/mockups/pages/homepage.html', function(urls) {
+
+        var f = { 'statusCode': urls[0].statusCode, 'requestedUrl': urls[0].request.href };
+        res.send(f);
 
         // post to ES / REDIS / MongoDB
-    });
+    }, interestingUrlRegex);
 
 });
 
