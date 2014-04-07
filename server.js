@@ -34,10 +34,10 @@ app.get('/', function(req, res){
 
     var interestingUrlRegex = /^http[s]:\/\/s3.*/;
 
-    getSnafus('http://t1-acceptance-glen-client.herokuapp.com/mockups/pages/homepage.html', function(urls) {
+    getSnafus('http://www.toyota-europe.com', function(urls) {
 
-        var f = { 'statusCode': urls[0].statusCode, 'requestedUrl': urls[0].request.href };
-        res.send(f);
+//        var f = { 'statusCode': urls[0].statusCode, 'requestedUrl': urls[0].request.href };
+        res.send(urls);
 
         // post to ES / REDIS / MongoDB
     }, interestingUrlRegex);

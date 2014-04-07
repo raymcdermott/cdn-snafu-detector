@@ -6,6 +6,7 @@
         "express": "3.x",
         "request": "2.33.x",
         "async": "0.6.x",
+        "lazy.js": "0.3.x",
         "cheerio": "0.13.x"
     }
 }
