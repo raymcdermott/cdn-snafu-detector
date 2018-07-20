@@ -34,7 +34,7 @@ app.get('/', function(req, res){
 
     var interestingUrlRegex = /^http[s]:\/\/s3.*/;
 
-    getSnafus('http://www.toyota-europe.com', function(urls) {
+    getSnafus('http://www.any-url.com', function(urls) {
 
 //        var f = { 'statusCode': urls[0].statusCode, 'requestedUrl': urls[0].request.href };
         res.send(urls);
